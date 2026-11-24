@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Soul Ink Black Tattoo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: #f5f5f5;
+            line-height: 1.7;
+        }
+
+        /* NAVIGATION */
+        nav {
+            background: #050505;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 24px;
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d4af37;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+            background:
+                linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+                url("soulink1.jpg") center/cover;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero img {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #d4af37;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: 60px;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 28px;
+            background: #d4af37;
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+
+        /* GENERAL SECTIONS */
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            color: #d4af37;
+        }
+
+        .section-title p {
+            color: #aaa;
+        }
+
+        /* ABOUT */
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            color: #ddd;
+            font-size: 17px;
+        }
+
+        /* VIDEO */
+        .video-container {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        video {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            border: 2px solid #d4af37;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        }
+
+        /* WHY CHOOSE US */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #151515;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #d4af37;
+            box-shadow: 0 10px 25px rgba(212,175,55,0.15);
+        }
+
+        .card h3 {
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #bbb;
+        }
+
+        /* TATTOO TYPES */
+        .tattoo-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .tattoo-type {
+            background: #191919;
+            padding: 18px;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid #333;
+            color: #eee;
+            transition: 0.3s;
+        }
+
+        .tattoo-type:hover {
+            background: #d4af37;
+            color: #111;
+        }
+
+        /* IMPORTANCE */
+        .importance {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .importance li {
+            margin: 15px 0;
+            padding: 12px;
+            background: #151515;
+            border-left: 4px solid #d4af37;
+            list-style-position: inside;
+        }
+
+        /* APPOINTMENT */
+        .appointment-box {
+            max-width: 700px;
+            margin: auto;
+            background: #151515;
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid #333;
+        }
+
+        form label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        form input,
+        form select {
+            width: 100%;
+            padding: 13px;
+            background: #0c0c0c;
+            color: white;
+            border: 1px solid #444;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        form input:focus,
+        form select:focus {
+            border-color: #d4af37;
+        }
+
+        .radio-group {
+            margin: 15px 0;
+        }
+
+        .radio-group input {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        .submit-btn {
+            margin-top: 25px;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background: #d4af37;
+            color: #111;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: white;
+        }
+
+        /* WARNING */
+        .warning {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 25px;
+            background: #241414;
+            border: 2px solid #b33a3a;
+            border-radius: 12px;
+        }
+
+        .warning h2 {
+            color: #ff6666;
+            margin-bottom: 15px;
+        }
+
+        .warning p {
+            margin: 10px 0;
+        }
+
+        /* CONTACT */
+        .contact {
+            text-align: center;
+            background: #101010;
+        }
+
+        .contact-info {
+            margin: auto;
+            max-width: 500px;
+            background: #181818;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #333;
+        }
+
+        .contact-info p {
+            margin: 12px;
+        }
+
+        .contact-info strong {
+            color: #d4af37;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #050505;
+            text-align: center;
+            padding: 25px;
+            color: #999;
+            border-top: 1px solid #333;
+        }
+
+        footer span {
+            color: #d4af37;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 50px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">🖤 SOUL INK</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#designs">Designs</a></li>
+        <li><a href="#importance">Why Tattoos?</a></li>
+        <li><a href="#appointment">Appointment</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <img src="snapchat-650828444.jpg" alt="Soul Ink Tattoo Logo">
+
+        <h1>SOUL INK BLACK TATTOO</h1>
+
+        <h2>YOUR STORY • YOUR ART • YOUR INK</h2>
+
+        <p>
+            Turn your ideas into art with Soul Ink Tattoos.
+            Every design tells a unique story.
+        </p>
+
+        <a href="#appointment" class="btn">
+            BOOK AN APPOINTMENT
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+    <div class="section-title">
+        <h2>About Soul Ink</h2>
+        <p>Where creativity becomes permanent art.</p>
+    </div>
+
+    <div class="about">
+
+        <p>
+            At Soul Ink Tattoos, we believe that tattoos are a creative
+            way to express individuality, memories, and personal stories.
+            Every design can have its own meaning, from symbols that
+            represent important moments to artwork chosen simply because
+            it looks beautiful.
+        </p>
+
+        <br>
+
+        <p>
+            Our goal is to provide a creative and welcoming experience
+            while paying close attention to design, detail, and cleanliness.
+            We work with clients to develop ideas that suit their
+            preferences and make each design personal and unique.
+        </p>
+
+    </div>
+
+    <div class="video-container">
+
+        <video controls>
+            <source src="soulink4.mp4" type="video/mp4">
+            Your browser does not support video playback.
+        </video>
+
+    </div>
+
+</section>
+
+
+<!-- WHY CHOOSE US -->
+<section>
+
+    <div class="section-title">
+        <h2>Why Choose Soul Ink?</h2>
+        <p>Quality, creativity and attention to detail.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🎨 Creative Designs</h3>
+            <p>
+                Creative and unique designs made to express your
+                individuality.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>✨ Attention to Detail</h3>
+            <p>
+                We focus carefully on the details that make each
+                design special.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🖤 Personal Expression</h3>
+            <p>
+                Designs created around your ideas, personality and
+                personal story.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>💫 Professional Service</h3>
+            <p>
+                Friendly and professional service with a strong
+                customer-worker relationship.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DESIGNS -->
+<section id="designs">
+
+    <div class="section-title">
+        <h2>Our Tattoo Designs</h2>
+        <p>Choose a style that represents you.</p>
+    </div>
+
+    <div class="tattoo-types">
+
+        <div class="tattoo-type">✨ Minimalist Tattoo</div>
+        <div class="tattoo-type">🌸 Floral Tattoo</div>
+        <div class="tattoo-type">🦋 Butterfly Tattoo</div>
+        <div class="tattoo-type">🖊️ Lettering Tattoo</div>
+        <div class="tattoo-type">🎨 Realistic Tattoo</div>
+        <div class="tattoo-type">🔱 Symbolic Tattoo</div>
+        <div class="tattoo-type">🏛️ Traditional Tattoo</div>
+        <div class="tattoo-type">💧 Watercolor Tattoo</div>
+        <div class="tattoo-type">🔷 Geometric Tattoo</div>
+        <div class="tattoo-type">🎭 Custom Tattoo</div>
+
+    </div>
+
+    <div class="video-container">
+
+        <video controls>
+            <source src="soulink2.mp4" type="video/mp4">
+            Your browser does not support video playback.
+        </video>
+
+    </div>
+
+</section>
+
+
+<!-- IMPORTANCE -->
+<section id="importance">
+
+    <div class="section-title">
+        <h2>Importance of Tattoos</h2>
+        <p>Tattoos can have different meanings for different people.</p>
+    </div>
+
+    <div class="importance">
+
+        <ul>
+
+            <li>
+                <b>Self-expression:</b>
+                Tattoos can help people express their personality,
+                creativity and interests.
+            </li>
+
+            <li>
+                <b>Memories:</b>
+                Some people use tattoos to remember important people,
+                events or experiences.
+            </li>
+
+            <li>
+                <b>Personal meaning:</b>
+                A tattoo can represent a value, goal or experience
+                meaningful to someone.
+            </li>
+
+            <li>
+                <b>Art and creativity:</b>
+                Tattoos can be a form of body art and allow people
+                to appreciate creative designs.
+            </li>
+
+            <li>
+                <b>Cultural identity:</b>
+                In some communities, tattoos have traditional or
+                cultural significance.
+            </li>
+
+            <li>
+                <b>Individuality:</b>
+                Tattoos can celebrate someone's unique personality
+                and interests.
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- APPOINTMENT -->
+<section id="appointment">
+
+    <div class="section-title">
+        <h2>Book an Appointment</h2>
+        <p>Tell us about the tattoo you want.</p>
+    </div>
+
+    <div class="appointment-box">
+
+        <form action="results.html">
+
+            <label>First Name</label>
+            <input type="text" name="firstname" required>
+
+            <label>Last Name</label>
+            <input type="text" name="lastname" required>
+
+            <label>Age</label>
+            <input type="number" name="age" min="1" required>
+
+            <label>Location</label>
+            <input type="text" name="location" required>
+
+            <label>Phone Number</label>
+            <input type="tel" name="phone" required>
+
+            <label>Do you want a tattoo?</label>
+
+            <div class="radio-group">
+                <input type="radio" name="tattoo" value="Yes" required>
+                Yes
+
+                <br>
+
+                <input type="radio" name="tattoo" value="No">
+                No
+            </div>
+
+            <label for="tattoo-type">
+                Select Your Tattoo Type
+            </label>
+
+            <select id="tattoo-type" name="tattoo_type" required>
+
+                <option value="">
+                    -- Choose a tattoo type --
+                </option>
+
+                <option value="minimalist">
+                    Minimalist Tattoo
+                </option>
+
+                <option value="floral">
+                    Floral Tattoo
+                </option>
+
+                <option value="butterfly">
+                    Butterfly Tattoo
+                </option>
+
+                <option value="lettering">
+                    Lettering Tattoo
+                </option>
+
+                <option value="realistic">
+                    Realistic Tattoo
+                </option>
+
+                <option value="symbolic">
+                    Symbolic Tattoo
+                </option>
+
+                <option value="traditional">
+                    Traditional Tattoo
+                </option>
+
+                <option value="watercolor">
+                    Watercolor Tattoo
+                </option>
+
+                <option value="geometric">
+                    Geometric Tattoo
+                </option>
+
+                <option value="custom">
+                    Custom Tattoo
+                </option>
+
+            </select>
+
+            <button type="submit" class="submit-btn">
+                SEND APPOINTMENT REQUEST
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- WARNING -->
+<section>
+
+    <div class="warning">
+
+        <h2>⚠️ APPOINTMENT WARNING</h2>
+
+        <p>
+            <b>Strictly by appointment only.</b>
+        </p>
+
+        <p>
+            Missing your appointment <b>3 times</b> means you will
+            have to rebook with a <b>30% down payment</b> again.
+        </p>
+
+        <p>
+            <b>Important:</b> Amounts paid are
+            <b>non-refundable.</b>
+        </p>
+
+        <p>
+            Tattoos are permanent or long-lasting, so clients should
+            make informed decisions and consider health and hygiene
+            before getting one.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <div class="section-title">
+        <h2>Contact Soul Ink</h2>
+        <p>Ready to turn your idea into art?</p>
+    </div>
+
+    <div class="contact-info">
+
+        <p>
+            <strong>Artist:</strong> J-kud
+        </p>
+
+        <p>
+            <strong>Telephone:</strong> 0500352569
+        </p>
+
+        <p>
+            <strong>Location:</strong>
+            Bomsoaroundkhariscourt, Kumasi
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © 2026 <span>Soul Ink Black Tattoo</span>.
+        All Rights Reserved.
+    </p>
+
+    <p>
+        Your story is unique. Your art can be too.
+    </p>
+
+</footer>
+
+</body>
+</html>
